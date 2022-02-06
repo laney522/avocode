@@ -15,8 +15,9 @@ const FollowList = ({ header, data }) => {
       dataSource={data}
       renerItem={(item) => (
         <List.Item style={{ marginTop: 20 }}>
-          <Card actions={[<StopOutlined key="stop" />]}></Card>
-          <Card.Meta description={item.nickname} />
+          <Card actions={[<StopOutlined key="stop" />]}>
+            <Card.Meta description={item.nickname} />
+          </Card>
         </List.Item>
       )}
     />
