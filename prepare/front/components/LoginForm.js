@@ -1,6 +1,9 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useCallback } from 'react';
 import { Form, Input, Button } from 'antd';
 import Link from 'next/link';
+
+import useInput from '../hooks/useInput';
+
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -12,16 +15,12 @@ const FormWrapper = styled(Form)`
   padding: 10px;
 `;
 
-const LoginForm = ({ setIsLoggedIn }) => {
+const LoginForm = () => {
   const [id, onChangeId] = useInput('');
   const [password, onChangePassword] = useInput('');
 
-
-  const style = useMemo(() => ({ marginTop: 10 }), []);
-
   const onSubmitForm = useCallback(() => {
     console.log(id, password);
-    setIsLoggedIn(true);
   }, [id, password]);
 
   return (
